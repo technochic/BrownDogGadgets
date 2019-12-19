@@ -1,6 +1,8 @@
 // Code for Santa's Sorting Hat Project
 // By Natasha Dzurny for Brown Dog Gadgets
 
+// Circuit: Connect button to pin D9 and ground; Connect Servo to pin D3
+
 #include <Servo.h> //Include the library that lets you command the servo
 int buttonPin = 9; // This is pin D9 on the Crazy Circuits board
 int LED = 13; // This is the LED on the board
@@ -14,7 +16,7 @@ int stageRight = 160; //The right most position as if you were wearing it - chan
 
 void setup() {
 
-  servo.attach(3);   //Servo is connected to pin 3
+  servo.attach(3);   //Servo is connected to pin D3
   pinMode(buttonPin, INPUT_PULLUP);
   pinMode(LED, OUTPUT);   // Define pin #13 as output, for the LED
 
