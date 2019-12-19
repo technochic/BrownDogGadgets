@@ -1,13 +1,16 @@
-#include <Servo.h>
-int buttonPin = 9;
-int LED = 13;
+// Code for Santa's Sorting Hat Project
+// By Natasha Dzurny for Brown Dog Gadgets
+
+#include <Servo.h> //Include the library that lets you command the servo
+int buttonPin = 9; // This is pin D9 on the Crazy Circuits board
+int LED = 13; // This is the LED on the board
 boolean buttonGate = false;
 
 Servo servo;
 int angle = 0;
-int startAngle = 95; // The position when the stick is straight up
-int stageLeft = 30; //The left most position as if you were wearing it
-int stageRight = 160; //The right most position as if you were wearing it
+int startAngle = 95; // The position when the stick is straight up - change angle if necessary
+int stageLeft = 30; //The left most position as if you were wearing it - change angle if necessary
+int stageRight = 160; //The right most position as if you were wearing it - change angle if necessary
 
 void setup() {
 
@@ -27,9 +30,9 @@ void loop() {
     if (buttonValue == LOW) {
       buttonGate = true;
       digitalWrite(LED, HIGH);
-      angleDance(90, 100, 10);
-      angleDance(60, 120, 7);
-      angleDance(40, 150, 4);
+      angleDance(90, 100, 10); // Change if you'd like! The first number is the minimum angle,
+      angleDance(60, 120, 7); //  the second is the maximum angle and the third is 
+      angleDance(40, 150, 4); // how many times it wiggles
       chooseYourFate();
       delay(5000);
     }
